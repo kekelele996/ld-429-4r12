@@ -134,13 +134,54 @@ export const exhibitions: Exhibition[] = [
   },
 ];
 
+// 注意：数组顺序刻意打乱，消费方必须按 order 排序后再展示。
 export const annotations: GuideAnnotation[] = [
+  {
+    id: 'guide-102',
+    artworkId: 'art-101',
+    position: { x: -6.2, y: 1.6, z: -4.2 },
+    title: '湿度曲线',
+    description: '画面下缘的灰蓝渐变对应雨后两小时的空气湿度变化。',
+    order: 2,
+  },
   {
     id: 'guide-101',
     artworkId: 'art-101',
     position: { x: -5.4, y: 3.2, z: -5 },
     title: '套印边缘',
     description: '左侧刻意留下 2mm 的错位边缘，模拟版画制程中的物理延迟。',
+    order: 1,
+  },
+  {
+    id: 'guide-103',
+    artworkId: 'art-101',
+    position: { x: -6.5, y: 2.6, z: -5.8 },
+    title: '手工压痕',
+    description: '放大画面四角可见手工套印的指纹压痕，是每幅唯一的编号来源。',
+    order: 3,
+  },
+  {
+    id: 'guide-105',
+    artworkId: 'art-102',
+    position: { x: 6.2, y: 2.8, z: -4.6 },
+    title: '色块边界',
+    description: '扶手椅与墙面之间留着一道未调和的底色，让色块保持临时感。',
+    order: 2,
+  },
+  {
+    id: 'guide-106',
+    artworkId: 'art-102',
+    position: { x: 5.6, y: 1.8, z: -5.4 },
+    title: '停靠的船',
+    description: '艺术家把椅背画得微微倾斜，像船身随波轻晃的瞬间。',
+    order: 1,
+  },
+  {
+    id: 'guide-107',
+    artworkId: 'art-103',
+    position: { x: -4.2, y: 2.6, z: -3.6 },
+    title: '赭色暗部',
+    description: '暗部并非纯黑，而是多层赭色叠加，贴近看有温热的光泽。',
     order: 1,
   },
   {

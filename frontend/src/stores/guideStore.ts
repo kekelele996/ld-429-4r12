@@ -10,6 +10,7 @@ interface GuideState {
 
 export const useGuideStore = create<GuideState>((set) => ({
   annotations,
-  activeAnnotationId: annotations[0]?.id,
+  // 初始为空：由 useArtworkAnnotations 按当前作品落到其第一条标注
+  activeAnnotationId: undefined,
   setActiveAnnotation: (id) => set({ activeAnnotationId: id }),
 }));
