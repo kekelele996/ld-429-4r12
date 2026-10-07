@@ -136,6 +136,15 @@ export const exhibitions: Exhibition[] = [
 
 export const annotations: GuideAnnotation[] = [
   {
+    id: 'guide-101-2',
+    artworkId: 'art-101',
+    position: { x: -6.8, y: 2.6, z: -3.6 },
+    title: '纸面留白',
+    description: '画面右上方三分之一的留白不是未完成，而是给城市噪音预留的呼吸口。',
+    audioUrl: '/audio/art-101-note-2.mp3',
+    order: 2,
+  },
+  {
     id: 'guide-101',
     artworkId: 'art-101',
     position: { x: -5.4, y: 3.2, z: -5 },
@@ -144,11 +153,36 @@ export const annotations: GuideAnnotation[] = [
     order: 1,
   },
   {
+    id: 'guide-101-3',
+    artworkId: 'art-101',
+    position: { x: -7.6, y: 1.6, z: -6.2 },
+    title: '制图网格',
+    description: '底层淡灰色网格来自城市地籍图，建筑轮廓在网格之上发生轻微滑移。',
+    order: 3,
+  },
+  {
+    id: 'guide-104-2',
+    artworkId: 'art-104',
+    position: { x: -6.2, y: 3.0, z: -5.8 },
+    title: '停留热区',
+    description: '图面中央的色块由停留超过四十秒的观众轨迹叠加而成，每日闭馆后重算。',
+    audioUrl: '/audio/art-104-note-2.mp3',
+    order: 2,
+  },
+  {
     id: 'guide-104',
     artworkId: 'art-104',
     position: { x: -3.8, y: 3.1, z: -7 },
     title: '数据痕迹',
     description: '每条线段都对应一段匿名参观轨迹，热区在图面中央形成回声。',
+    order: 1,
+  },
+  {
+    id: 'guide-103',
+    artworkId: 'art-103',
+    position: { x: -3.6, y: 2.4, z: -4 },
+    title: '赭色暗部',
+    description: '花瓶轮廓在暗部中几乎消失，只靠一笔赭石色维持形体的温度。',
     order: 1,
   },
 ];

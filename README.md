@@ -36,9 +36,9 @@ frontend/src/
 ├── api/              # mockGallery.ts
 ├── stores/           # roomStore.ts, artworkStore.ts, exhibitionStore.ts, guideStore.ts, visitorStore.ts, themeStore.ts
 ├── types/            # room.ts, artwork.ts, exhibition.ts, guide.ts, visitor.ts, enums.ts, index.ts
-├── components/common/  # ArtworkInfoCard, GuideTooltip, ExhibitionCard, MiniMap, PropertyPanel, StatusBadge, EmptyState
+├── components/common/  # ArtworkInfoCard, GuideTooltip, GuideAnnotationNavigator, ExhibitionCard, MiniMap, PropertyPanel, StatusBadge, EmptyState
 ├── components/scene/   # GalleryScene, RoomBuilder, ArtworkMount, LightingSetup, NavigationController
-├── hooks/            # useFirstPersonController.ts, useGalleryScene.ts, useVisitorTracking.ts
+├── hooks/            # useFirstPersonController.ts, useGalleryScene.ts, useVisitorTracking.ts, useArtworkAnnotations.ts
 ├── pages/            # GalleryWalk, ExhibitionList, ArtworkDetail, RoomEditor, Analytics
 ├── router/           # index.tsx
 ├── utils/            # threeUtils/, db.ts

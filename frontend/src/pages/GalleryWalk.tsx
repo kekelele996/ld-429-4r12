@@ -1,19 +1,27 @@
 import { Link } from 'react-router-dom';
 import { ArtworkInfoCard } from '../components/common/ArtworkInfoCard';
-import { GuideTooltip } from '../components/common/GuideTooltip';
+import { GuideAnnotationNavigator } from '../components/common/GuideAnnotationNavigator';
 import { MiniMap } from '../components/common/MiniMap';
 import { GalleryScene } from '../components/scene/GalleryScene';
+import { useArtworkAnnotations } from '../hooks/useArtworkAnnotations';
 import { useFirstPersonController } from '../hooks/useFirstPersonController';
 import { useGalleryScene } from '../hooks/useGalleryScene';
 import { useVisitorTracking } from '../hooks/useVisitorTracking';
 import { useArtworkStore } from '../stores/artworkStore';
-import { useGuideStore } from '../stores/guideStore';
 
 export function GalleryWalk() {
   const { room, artworks } = useGalleryScene();
   const activeArtworkId = useArtworkStore((state) => state.activeArtworkId);
   const activeArtwork = useArtworkStore((state) => state.artworks.find((artwork) => artwork.id === activeArtworkId));
-  const annotation = useGuideStore((state) => state.annotations.find((item) => item.artworkId === activeArtworkId));
+  const {
+    activeAnnotation,
+    currentIndex,
+    total,
+    isFirst,
+    isLast,
+    showPrevious,
+    showNext,
+  } = useArtworkAnnotations(activeArtworkId);
   const { hintVisible, velocity } = useFirstPersonController();
   useVisitorTracking(activeArtworkId);
 
@@ -28,7 +36,18 @@ export function GalleryWalk() {
       <aside className="space-y-4">
         {room && <MiniMap room={room} artworks={artworks} />}
         {activeArtwork ? <ArtworkInfoCard artwork={activeArtwork} /> : null}
-        {annotation ? <GuideTooltip annotation={annotation} /> : null}
+        {activeArtwork ? (
+          <GuideAnnotationNavigator
+            artworkId={activeArtwork.id}
+            activeAnnotation={activeAnnotation}
+            currentIndex={currentIndex}
+            total={total}
+            isFirst={isFirst}
+            isLast={isLast}
+            onPrevious={showPrevious}
+            onNext={showNext}
+          />
+        ) : null}
         <Link className="block border border-[var(--color-line)] p-4 text-center text-sm uppercase tracking-[0.2em] hover:bg-[var(--color-panel)]" to="/editor">
           Open room editor
         </Link>
